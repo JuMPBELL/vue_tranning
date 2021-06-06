@@ -3,7 +3,7 @@
     <div class="login_box">
       <!-- logo -->
       <div class="avatar_box">
-        <img src="../assets/logo.png" alt />
+        <img src="../assets/logo.png" />
       </div>
       <!-- element-from表单 -->
       <el-form
@@ -49,13 +49,13 @@ export default {
   },
   methods: {
     resetLoginForm() {
-      this.$refs.loginFormRef.resetFields();
+      this.$refs.loginFormRef.resetFields()
     },
     login() {
       this.$refs.loginFormRef.validate((valid) => {
           if (!valid) {
               return
-          };
+          }
           const result = this.$http.post("/login",this.loginForm)
           return result
       });
